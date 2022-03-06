@@ -1,0 +1,797 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@media only screen and (min-width: 1001px) {
+    body {
+        background-image: url("slike/pMcubUb.jpg");
+        background-position: center;
+        background-attachment: fixed;
+        scrollbar-width: thin;
+    }
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: rgb(173, 230, 230);
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: rgb(39, 144, 204);
+        border-radius: 10px; 
+    }
+    header {
+        margin-top: 10px;
+        margin-left: 15%;
+        margin-right: 15%;
+        padding: 10px;
+        border: 5px solid rgb(0, 255, 191);
+        border-radius: 30px;
+        background-color: rgba(13, 255, 243, 0.493);
+        box-shadow: 0px 0px 10px white;
+    }
+    header h1 {
+        text-align: center;
+        padding: 5px;
+        color: rgb(69, 195, 245);
+        text-shadow: 0px 0px 10px rgb(5, 5, 5);
+    }
+    header h3 {
+        text-align: center;
+        padding: 5px;
+        color: rgb(0, 195, 255);
+        text-shadow: 0px 0px 10px rgb(0, 0, 0);
+    }
+
+    /*Dugmad za menjanje sobe*/
+    
+    nav {
+        padding: 15px;
+        text-align: center;
+    }
+    button {
+        display: inline-block;
+        width: 15%;
+        padding: 15px;
+        background-color: rgb(23, 231, 186);
+        border-radius: 30px;
+        box-shadow: 0px 0px 10px white;
+        border-top: 1px solid lightblue;
+        border-left: 1px solid lightblue;
+        border-right: 1px solid rgb(12, 96, 129);
+        border-bottom: 1px solid rgb(12, 111, 129);
+        font-size: 25px;
+        font-weight: bold;
+        color: white;
+        text-shadow: 5px 5px 5px rgb(5, 19, 49);
+    }
+    button:hover {
+        background-color: rgba(13, 149, 173, 0.658);
+    }
+
+    /*Div chat u kome se ispisuju poruke i notifikacije*/
+
+    #chat {
+        height: 480px;
+        margin-left: 20%;
+        margin-right: 20%;
+        border: 2px solid rgb(0, 255, 157);
+        box-shadow: 0px 0px 10px rgb(255, 255, 255);
+        border-radius: 10px;
+        overflow: auto;
+        background-color: rgba(87, 203, 238, 0.425);
+    }
+    #forma {
+        position: relative;
+    }
+    #forma > p {
+        position: absolute;
+        left: 80px;
+        bottom: 40px;
+        padding: 10px;
+        background-color: rgb(17, 126, 160);
+        font-size: 38px;
+        text-align: center;
+        color: white;
+        text-shadow: 5px 5px 3px rgb(6, 47, 59);
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px rgb(17, 126, 160);
+    }
+
+    /*UL lista i LI*/
+
+    #chatPoruke {
+        padding: 25px;
+        list-style-image: url("slike/snowflake.png");
+    }
+    #chatPoruke li img {
+        float: right;
+    }
+    .current_user {
+        overflow-wrap: break-word;
+        color: rgb(23, 23, 94);
+        float: left;
+        direction: ltr;
+        background-color: rgb(150, 212, 233);
+        padding: 10px;
+        width: 50%;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        margin: 7px;
+        box-shadow: 5px 5px 5px rgb(16, 16, 46);
+    }
+    .other_user {
+        overflow-wrap: break-word;
+        color: white;
+        float: right;
+        direction: rtl;
+        background-color: rgb(33, 178, 226);
+        padding: 10px;
+        width: 50%;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        margin: 7px;
+        box-shadow: 5px 5px 5px rgb(16, 16, 46);
+    }
+
+    /*Input forme*/
+
+    #color {
+        padding: 10px;
+        text-align: center;
+    }
+    #dates {
+        padding: 10px;
+        text-align: center;
+    }
+    #updating {
+        padding: 10px;
+        text-align: center;
+    }
+    #sending {
+        padding: 10px;
+        text-align: center;
+    }
+
+    /*Input polja*/
+
+    #boja {
+        display: inline-block;
+        vertical-align: middle;
+        height: 2.5em;
+        width: 30%;
+        box-shadow: 0px 0px 10px white;
+        border-top: 1px solid lightblue;
+        border-left: 1px solid lightblue;
+        border-right: 1px solid rgb(12, 96, 129);
+        border-bottom: 1px solid rgb(12, 96, 129);
+        border-radius: 10px;
+        background-image: linear-gradient(rgb(208, 235, 228), rgb(109, 184, 209));
+    }
+    #send, #update {
+        display: inline-block;
+        vertical-align: middle;
+        width: 30%;
+        padding: 10px;
+        border-radius: 15px;
+        box-shadow: 0px 0px 10px white;
+        border-top: 1px solid lightblue;
+        border-left: 1px solid lightblue;
+        border-right: 1px solid rgb(12, 96, 129);
+        border-bottom: 1px solid rgb(12, 96, 129);
+        background-image: linear-gradient(rgb(255, 255, 255), lightblue);
+    }
+    #date1, #date2 {
+        width: 15%;
+        padding: 10px;
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px white;
+        border-top: 1px solid lightblue;
+        border-left: 1px solid lightblue;
+        border-right: 1px solid rgb(12, 96, 129);
+        border-bottom: 1px solid rgb(12, 96, 129);
+        background-image: linear-gradient(rgb(255, 255, 255), lightblue);
+    }
+    
+    /*Input submit dugmad*/
+
+    #SendBtn, #UpdateBtn, #ColorBtn, #DateBtn {
+        display: inline-block;
+        width: 15%;
+        padding: 10px;
+        border-radius: 15px;
+        background-image: repeating-linear-gradient(white, rgb(23, 231, 186));
+        box-shadow: 0px 0px 10px white;
+        border-top: 1px solid lightblue;
+        border-left: 1px solid lightblue;
+        border-right: 1px solid rgb(12, 96, 129);
+        border-bottom: 1px solid rgb(12, 96, 129);
+    }
+    #SendBtn:hover {
+        box-shadow: 0px 0px 10px rgb(255, 255, 255);
+        background-image: radial-gradient(rgb(171, 253, 232), rgb(0, 119, 255));
+    }
+    #UpdateBtn:hover {
+        box-shadow: 0px 0px 10px rgb(255, 255, 255);
+        background-image: radial-gradient(rgb(171, 253, 232), rgb(0, 119, 255));
+    }
+    #ColorBtn:hover {
+        box-shadow: 0px 0px 10px rgb(255, 255, 255);
+        background-image: radial-gradient(rgb(171, 253, 232), rgb(0, 119, 255));
+    }
+    #DateBtn:hover {
+        box-shadow: 0px 0px 10px rgb(255, 255, 255);
+        background-image: radial-gradient(rgb(171, 253, 232), rgb(0, 119, 255));
+    }
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@media only screen and (min-width: 700px) and (max-width: 1000px) {
+    body {
+        background-image: url("slike/pMcubUb.jpg");
+        background-position: center;
+        background-attachment: fixed;
+    }
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: rgb(173, 230, 230);
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: rgb(39, 144, 204);
+        border-radius: 10px; 
+    }
+    header {
+        margin-top: 10px;
+        margin-left: 15%;
+        margin-right: 15%;
+        padding: 10px;
+        border: 5px solid rgb(0, 238, 255);
+        border-radius: 30px;
+        background-color: rgba(24, 157, 209, 0.493);
+        
+    }
+    header h1 {
+        text-align: center;
+        padding: 5px;
+        color: rgb(17, 236, 207);
+        text-shadow: 0px 0px 10px rgb(0, 0, 0);
+    }
+    header h3 {
+        text-align: center;
+        padding: 5px;
+        color: rgb(9, 255, 202);
+        text-shadow: 0px 0px 10px rgb(0, 0, 0);
+    }
+
+    /*Dugmad za menjanje sobe*/
+    
+    nav {
+        padding: 15px;
+        text-align: center;
+    }
+    button {
+        display: inline-block;
+        font-weight: bold;
+        color: white;
+        width: 22%;
+        font-size: 20px;
+        padding: 15px;
+        background-color: rgb(23, 231, 186);
+        border-radius: 30px;
+        text-shadow: 5px 5px 5px rgb(5, 19, 49);
+        box-shadow: 0px 0px 10px white;
+        border-top: 1px solid lightblue;
+        border-left: 1px solid lightblue;
+        border-right: 1px solid rgb(12, 96, 129);
+        border-bottom: 1px solid rgb(12, 111, 129);
+    }
+
+    /*Div chat u kome se ispisuju poruke i notifikacije*/
+
+    #chat {
+        height: 600px;
+        margin-left: 10%;
+        margin-right: 10%;
+        border: 2px solid rgb(0, 255, 157);
+        box-shadow: 0px 0px 10px rgb(255, 255, 255);
+        border-radius: 10px;
+        overflow: auto;
+        background-color: rgba(87, 203, 238, 0.425);
+    }
+    #forma {
+        position: relative;
+    }
+    #forma > p {
+        position: absolute;
+        left: 20px;
+        bottom: 10px;
+        padding: 5px;
+        background-color: rgb(48, 170, 207);
+        font-size: 38px;
+        text-align: center;
+        color: white;
+        text-shadow: 5px 5px 3px rgb(6, 47, 59);
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px rgb(17, 126, 160);
+    }
+
+    /*UL lista i LI*/
+    
+    #chatPoruke {
+        padding: 25px;
+        list-style-image: url("slike/snowflake.png");
+    }
+    #chatPoruke li img {
+        float: right;
+    }
+    .current_user {
+        overflow-wrap: break-word;
+        color:rgb(13, 68, 87);
+        float: left;
+        direction: ltr;
+        background-color: rgb(150, 212, 233);
+        padding: 10px;
+        width: 50%;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        box-shadow: 5px 5px 5px rgb(16, 16, 46);
+        margin: 7px;
+    }
+    .other_user {
+        overflow-wrap: break-word;
+        color: white;
+        float: right;
+        direction: rtl;
+        background-color: rgb(33, 178, 226);
+        padding: 10px;
+        width: 50%;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        margin: 7px;
+        box-shadow: 5px 5px 5px rgb(16, 16, 46);
+    }
+    
+    /*Input forme*/
+    
+    #color {
+        padding: 10px;
+        text-align: center;
+    }
+    #dates {
+        padding: 10px;
+        text-align: center;
+    }
+    #sending {
+        padding: 10px;
+        text-align: center;
+    }
+    #updating {
+        padding: 10px;
+        text-align: center;
+    }
+
+    /*Input polja*/
+    
+    #boja {
+        display: inline-block;
+        height: 3em;
+        border-radius: 10px;
+        width: 100%;
+        margin-top: 10px;
+        background-image: linear-gradient(rgb(208, 235, 228), lightblue);
+    }
+    #send, #update {
+        display: inline-block;
+        width: 100%;
+        padding: 20px;
+        border-radius: 15px;
+        background-image: linear-gradient(rgb(208, 235, 228), lightblue);
+    }
+    #date1, #date2 {
+        width: 45%;
+        padding: 10px;
+        border-radius: 20px;
+        background-image: linear-gradient(rgb(208, 235, 228), lightblue);
+    }
+
+     /*Input submit dugmad*/
+    
+    #SendBtn, #UpdateBtn, #ColorBtn, #DateBtn {
+        display: inline-block;
+        width: 25%;
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 15px;
+        background-image: radial-gradient(rgb(56, 255, 255), white);
+    }
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@media only screen and (min-width: 601px) and (max-width: 699px) {
+    body {
+        background-image: url("slike/pMcubUb.jpg");
+        background-position: center;
+        background-attachment: fixed;
+    }
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: rgb(173, 230, 230);
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: rgb(39, 144, 204);
+        border-radius: 10px; 
+    }
+    
+    header {
+        margin-top: 10px;
+        margin-left: 15%;
+        margin-right: 15%;
+        padding: 10px;
+        border: 5px solid rgb(0, 238, 255);
+        border-radius: 30px;
+        background-color: rgba(24, 157, 209, 0.493);
+        
+    }
+    header h1 {
+        text-align: center;
+        padding: 5px;
+        color: rgb(17, 236, 207);
+        text-shadow: 0px 0px 10px rgb(0, 0, 0);
+    }
+    header h3 {
+        text-align: center;
+        padding: 5px;
+        color: rgb(9, 255, 202);
+        text-shadow: 0px 0px 10px rgb(0, 0, 0);
+    }
+
+    /*Dugmad za menjanje sobe*/
+    
+    nav {
+        padding: 15px;
+        text-align: center;
+    }
+    button {
+        display: inline-block;
+        font-weight: bold;
+        color:white;
+        width: 40%;
+        font-size: 20px;
+        padding: 15px;
+        background-color: rgb(23, 231, 186);
+        border-radius: 30px;
+        margin: 5px;
+        text-shadow: 5px 5px 5px rgb(5, 19, 49);
+        box-shadow: 0px 0px 10px white;
+        border-top: 1px solid lightblue;
+        border-left: 1px solid lightblue;
+        border-right: 1px solid rgb(12, 96, 129);
+        border-bottom: 1px solid rgb(12, 111, 129);
+    }
+
+    /*Div chat u kome se ispisuju poruke i notifikacije*/
+
+    #chat {
+        height: 600px;
+        margin-left: 10%;
+        margin-right: 10%;
+        border: 2px solid rgb(0, 255, 157);
+        box-shadow: 0px 0px 10px rgb(255, 255, 255);
+        border-radius: 10px;
+        overflow: auto;
+        background-color: rgba(87, 203, 238, 0.425);
+    }
+    #forma {
+        position: relative;
+    }
+    #forma > p {
+        position: absolute;
+        left: 20px;
+        bottom: 10px;
+        padding: 6px;
+        background-color: rgb(48, 170, 207);
+        font-size: 38px;
+        text-align: center;
+        color: white;
+        text-shadow: 5px 5px 3px rgb(6, 47, 59);
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px rgb(17, 126, 160);
+    }
+    
+    /*UL lista i LI*/
+
+    #chatPoruke {
+        padding: 25px;
+        list-style-image: url("slike/snowflake.png");
+    }
+    #chatPoruke li img {
+        float: right;
+    }
+    .current_user {
+        overflow-wrap: break-word;
+        color:rgb(13, 68, 87);
+        float: left;
+        direction: ltr;
+        background-color: rgb(150, 212, 233);
+        padding: 10px;
+        width: 50%;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        box-shadow: 5px 5px 5px rgb(16, 16, 46);
+        margin: 7px;
+    }
+    .other_user {
+        overflow-wrap: break-word;
+        color: white;
+        float: right;
+        direction: rtl;
+        background-color: rgb(33, 178, 226);
+        padding: 10px;
+        width: 50%;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        margin: 7px;
+        box-shadow: 5px 5px 5px rgb(16, 16, 46);
+    }
+
+    /*Input forme*/
+
+    #color {
+        padding: 10px;
+        text-align: center;
+    }
+    #dates {
+        padding: 10px;
+        text-align: center;
+    }
+    #sending {
+        padding: 10px;
+        text-align: center;
+    }
+    #updating {
+        padding: 10px;
+        text-align: center;
+    }
+
+    /*Input polja*/
+
+    #boja {
+        display: inline-block;
+        height: 3.5em;
+        border-radius: 5px;
+        width: 100%;
+        margin-top: 10px;
+        background-image: linear-gradient(rgb(208, 235, 228), lightblue);
+    }
+    #date1, #date2 {
+        width: 45%;
+        border-radius: 20px;
+        padding: 10px;
+        background-image: linear-gradient(rgb(208, 235, 228), lightblue);
+    }
+    #send, #update {
+        display: inline-block;
+        width: 100%;
+        padding: 20px;
+        border-radius: 15px;
+        background-image: linear-gradient(rgb(208, 235, 228), lightblue);
+    }
+
+    /*Input submit dugmad*/
+
+    #SendBtn, #UpdateBtn, #ColorBtn, #DateBtn {
+        display: inline-block;
+        width: 25%;
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 15px;
+        background-image: radial-gradient(rgb(56, 255, 255), white);
+    }
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@media only screen and (max-width: 600px) {
+    body {
+        background-image: url("slike/pMcubUb.jpg");
+        background-position: center;
+        background-attachment: fixed;
+    }
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: rgb(173, 230, 230);
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background-color: rgb(39, 144, 204);
+        border-radius: 10px; 
+    }
+    
+    header {
+        margin-top: 10px;
+        margin-left: 15%;
+        margin-right: 15%;
+        padding: 10px;
+        border: 5px solid rgb(0, 238, 255);
+        border-radius: 30px;
+        background-color: rgba(24, 157, 209, 0.493);
+        
+    }
+    header h1 {
+        text-align: center;
+        padding: 5px;
+        color: rgb(17, 236, 207);
+        text-shadow: 0px 0px 10px rgb(0, 0, 0);
+    }
+    header h3 {
+        text-align: center;
+        padding: 5px;
+        color: rgb(9, 255, 202);
+        text-shadow: 0px 0px 10px rgb(0, 0, 0);
+    }
+    
+    /*Dugmad za menjanje sobe*/
+
+    nav {
+        padding: 15px;
+        text-align: center;
+    }
+    button {
+        display: inline-block;
+        font-weight: bold;
+        color: white;
+        width: 40%;
+        font-size: 20px;
+        padding: 15px;
+        background-color: rgb(23, 231, 186);
+        border-radius: 30px;
+        margin: 5px;
+        text-shadow: 5px 5px 5px rgb(5, 19, 49);
+        box-shadow: 0px 0px 10px white;
+        border-top: 1px solid lightblue;
+        border-left: 1px solid lightblue;
+        border-right: 1px solid rgb(12, 96, 129);
+        border-bottom: 1px solid rgb(12, 111, 129);
+    }
+
+    /*Div chat u kome se ispisuju poruke i notifikacije*/
+
+    #chat {
+        height: 600px;
+        margin-left: 10%;
+        margin-right: 10%;
+        border: 2px solid rgb(0, 255, 157);
+        box-shadow: 0px 0px 10px rgb(255, 255, 255);
+        border-radius: 10px;
+        overflow: auto;
+        background-color: rgba(87, 203, 238, 0.425);
+    }
+    #forma {
+        position: relative;
+    }
+    #forma > p {
+        position: absolute;
+        left: 20px;
+        bottom: 10px;
+        padding: 6px;
+        background-color: rgb(48, 170, 207);
+        font-size: 38px;
+        text-align: center;
+        color: white;
+        text-shadow: 5px 5px 3px rgb(6, 47, 59);
+        border-radius: 20px;
+        box-shadow: 0px 0px 10px rgb(17, 126, 160);
+    }
+
+    /*UL lista i LI*/
+    
+    #chatPoruke {
+        padding: 25px;
+        list-style-image: url("slike/snowflake.png");
+    }
+    #chatPoruke li img {
+        float: right;
+    }
+    .current_user {
+        overflow-wrap: break-word;
+        color:rgb(13, 68, 87);
+        float: left;
+        direction: ltr;
+        background-color: rgb(150, 212, 233);
+        padding: 10px;
+        width: 50%;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        box-shadow: 5px 5px 5px rgb(16, 16, 46);
+        margin: 7px;
+    }
+    .other_user {
+        overflow-wrap: break-word;
+        color: white;
+        float: right;
+        direction: rtl;
+        background-color: rgb(33, 178, 226);
+        padding: 10px;
+        width: 50%;
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        margin: 7px;
+        box-shadow: 5px 5px 5px rgb(16, 16, 46);
+    }
+
+    /*Input forme*/
+
+    #color {
+        padding: 10px;
+        text-align: center;
+    }
+    #dates {
+        padding: 10px;
+        text-align: center;
+    }
+    #sending {
+        padding: 10px;
+        text-align: center;
+    }
+    #updating {
+        padding: 10px;
+        text-align: center;
+    }
+
+    /*Input polja*/
+
+    #boja {
+        display: inline-block;
+        height: 3.5em;
+        border-radius: 5px;
+        width: 100%;
+        margin-top: 10px;
+        background-image: linear-gradient(rgb(208, 235, 228), lightblue);
+    }
+    #date1, #date2 {
+        width: 45%;
+        padding: 10px;
+        border-radius: 20px;
+        background-image: linear-gradient(rgb(208, 235, 228), lightblue);
+    }
+    #send, #update {
+        display: inline-block;
+        width: 100%;
+        padding: 20px;
+        border-radius: 15px;
+        background-image: linear-gradient(rgb(208, 235, 228), lightblue);
+    }
+    
+    /*Input submit dugmad*/
+
+    #SendBtn, #UpdateBtn, #ColorBtn, #DateBtn {
+        display: inline-block;
+        width: 25%;
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 15px;
+        background-image: radial-gradient(rgb(56, 255, 255), white);
+    }
+}

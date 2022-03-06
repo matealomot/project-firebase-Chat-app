@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>My Chat</title>
+</head>
+<body>
+
+    <div>
+        <header>
+            <h1>ITBootcamp Chat</h1>
+            <h3>Choose a chatroom</h3>
+        </header>
+    </div>
+
+    <nav>
+        <button id="#general">#General</button>
+        <button id="#js">#Js</button>
+        <button id="#homework">#Homework</button>
+        <button id="#tests">#Tests</button>
+    </nav>
+
+    <div id="chat">
+        <ul id="chatPoruke">
+
+        </ul>
+    </div>
+
+    <div id="forma">
+        <form action="" id="color">
+            <input type="color" name="boja" id="boja" value="#FFFFFF">
+            <input type="submit" value="Chat Color" id="ColorBtn">
+        </form>
+        <form action="" id="dates">
+            <input type="datetime-local" name="" id="date1">
+            <input type="datetime-local" name="" id="date2">
+            <input type="submit" value="Set Dates" id="DateBtn">
+        </form>
+        <form id="sending">
+            <textarea name="" id="send" cols="30" rows="1" placeholder="Your message..."></textarea>
+            <input type="submit" value="Send" id="SendBtn">
+        </form>
+        <form id="updating">
+            <input type="text" name="" id="update" placeholder="Update username">
+            <input type="submit" value="Update" id="UpdateBtn">
+        </form>
+    </div>
+
+
+
+
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+   <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-firestore.js"></script>
+   <script>
+       const firebaseConfig = {
+        apiKey: "AIzaSyDYYoznytMDHPwuTbN_9UE2P8NHdHSv3wg",
+        authDomain: "itbootcamp-jsreact.firebaseapp.com",
+        projectId: "itbootcamp-jsreact",
+        storageBucket: "itbootcamp-jsreact.appspot.com",
+        messagingSenderId: "880232317842",
+        appId: "1:880232317842:web:cf9330ad29077c42ebb74b",
+        measurementId: "G-CZ5WTZMBPD"
+        };
+       // Initialize Firebase
+       firebase.initializeApp(firebaseConfig);
+       let db = firebase.firestore();
+   </script>
+
+   <script type="module" src="app.js"></script>
+    
+</body>
+</html>
